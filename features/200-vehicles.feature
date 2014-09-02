@@ -3,6 +3,7 @@ Feature: Vehicles
 Scenario: Agree to cookie policy
     @breaks-local
     Given I am on "/tools/tco"
+    And I wait for "10" seconds
     When I click button with id "buttonAccept"
 
 Scenario: Add four vehicles
