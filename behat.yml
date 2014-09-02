@@ -1,7 +1,7 @@
 default:
     extensions:
         Behat\MinkExtension\Extension:
-            base_url: http://www.nissan.co.uk/
+            base_url: http://www.nissan.co.uk/fleet-cars/
             default_session: selenium2
             selenium2: ~
     formatter:
@@ -9,12 +9,12 @@ default:
         parameters:
             output_path: null,build/junit,build/behat_report.html
     filters:
-        tags: "~@breaks-ci"
+        tags: "~@breaks-local"
 
 ci:
     extensions:
         Behat\MinkExtension\Extension:
-            base_url: http://www.nissan.co.uk/
+            base_url: http://www.nissan.co.uk/fleet-cars/
             default_session: selenium2
             default_session: selenium2
             javascript_session: 'selenium2'

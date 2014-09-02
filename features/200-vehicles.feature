@@ -1,7 +1,12 @@
 Feature: Vehicles
 
+Scenario: Agree to cookie policy
+    @breaks-local
+    Given I am on "/tools/tco"
+    When I click button with id "buttonAccept"
+
 Scenario: Add four vehicles
-    Given I am on "/fleet-cars/tools/tco"
+    Given I am on "/tools/tco"
     #When I click button with id "buttonAccept"
     And I click button with title "e-NV200 (4)"
     And I fill in the following:
@@ -51,7 +56,7 @@ Scenario: Add four vehicles
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Calculate tax"
-    Then the URL should match "/fleet-cars/tools/tco/terms"
+    Then the URL should match "/tools/tco/terms"
     And I should see "TOTAL COST OF OWNERSHIP CALCULATOR"
 
     When I press "Calculate >"
