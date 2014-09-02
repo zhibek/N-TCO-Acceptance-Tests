@@ -1,23 +1,21 @@
 Feature: Vehicles
 
-Scenario: Agree to cookie policy
-    @breaks-local
-    Given I am on "/tools/tco"
-    And I wait for "10" seconds
-    When I click button with id "buttonAccept"
-
 Scenario: Add four vehicles
     Given I am on "/tools/tco"
-    #When I click button with id "buttonAccept"
+    And I wait for "5" seconds
+    # This may break locally
+    When I click button with id "buttonAccept"
+    And I wait for "2" seconds
     And I click button with title "e-NV200 (4)"
+    And I wait for "2" seconds
     And I fill in the following:
     	| choose-grade | Acenta (1) |
     And I click button with title "View models as grid"
     And I click button with class "add-to-basket"
+    And I wait for "5" seconds
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Add another vehicle"
-
 
     When I check "manu-other" radio button
     And I select "MERCEDES-BENZ (491)" in element "manufacturer"
@@ -28,17 +26,20 @@ Scenario: Add four vehicles
     And I wait for "3" seconds
     And I select "AMG Edition 507 (1)" in element "other-choose-grade"
     And I wait for "3" seconds
-    And I click button with class "add-to-basket" 
+    And I click button with class "add-to-basket"
+    And I wait for "3" seconds 
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Add another vehicle"
 
     When I click button with title "Commercial Vehicles"
     And I click button with title "NAVARA (8)"
+    And I wait for "3" seconds
     And I fill in the following:
     	| choose-grade | Pick-up (1) |    
     And I click button with title "View models as grid"
     And I click button with class "add-to-basket"
+    And I wait for "3" seconds
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Add another vehicle"
@@ -53,7 +54,8 @@ Scenario: Add four vehicles
     And I wait for "3" seconds
     And I select "Crew Bus (1)" in element "other-choose-grade"
     And I wait for "3" seconds
-    And I click button with class "add-to-basket" 
+    And I click button with class "add-to-basket"
+    And I wait for "3" seconds 
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Calculate tax"
