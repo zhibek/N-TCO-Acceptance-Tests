@@ -3,8 +3,8 @@ Feature: Vehicles
 Scenario: Add four vehicles
     Given I am on "/tools/tco"
     And I wait for "5" seconds
-    # This may break locally
-    When I click button with id "buttonAccept"
+    When I click cookie button
+
     And I wait for "2" seconds
     And I click button with title "e-NV200 (4)"
     And I wait for "2" seconds

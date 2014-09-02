@@ -38,16 +38,21 @@ class FeatureContext extends MinkContext
     }
 
     /**
-     * @When /^I click button with id "([^"]*)"$/
+     * @When /^I click cookie button$/
      */
-    public function iClickButtonWithId($text)
+    public function iClickCookieButton()
     {
-        $element = $this->getSession()->getPage()->find('css', "div#".$text);
+        $this->getSession()->switchToIFrame("qb_cookie_consent_main");
+
+        $css = "div#buttonAccept";
+
+        $element = $this->getSession()->getPage()->find('css', $css);
 
         // errors must not pass silently
         if (null === $element) {
-            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $locator));
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $css));
         }
+
         $element->click();
     }    
 
