@@ -40,6 +40,7 @@ Scenario: Add four vehicles
     And I wait for "3" seconds
     And I fill in the following:
     	| choose-grade | Pick-up (1) |
+    And I wait for "3" seconds	
     And I click button with title "View models as grid"	
     And I wait for "3" seconds
     And I click button with class "add-to-basket"
