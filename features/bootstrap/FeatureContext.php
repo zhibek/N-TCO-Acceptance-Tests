@@ -34,7 +34,12 @@ class FeatureContext extends MinkContext
      */
     public function iClickButtonWithClass($text)
     {
-        $this->getSession()->getPage()->find('xpath', '*//*[@class = "'. $text .'"]')->click();
+        $element = $this->getSession()->getPage()->find('xpath', '*//*[@class = "'. $text .'"]');
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $text));
+        }
+
+        $element->click();
     }
 
     /**

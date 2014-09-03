@@ -11,6 +11,7 @@ Scenario: Add four vehicles
     And I fill in the following:
     	| choose-grade | Acenta (1) |
     And I wait for "3" seconds
+    And I click button with title "View models as grid"
     And I click button with class "add-to-basket"
     And I wait for "5" seconds
     And I should see "YOUR VEHICLE SELECTION"
@@ -28,7 +29,7 @@ Scenario: Add four vehicles
     And I select "AMG Edition 507 (1)" in element "other-choose-grade"
     And I wait for "3" seconds
     And I click button with class "add-to-basket"
-    And I wait for "3" seconds
+    And I wait for "5" seconds
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Add another vehicle"
@@ -38,7 +39,8 @@ Scenario: Add four vehicles
     And I click button with title "NAVARA (8)"
     And I wait for "3" seconds
     And I fill in the following:
-    	| choose-grade | Pick-up (1) |    
+    	| choose-grade | Pick-up (1) |
+    And I click button with title "View models as grid"	
     And I wait for "3" seconds
     And I click button with class "add-to-basket"
     And I wait for "3" seconds
@@ -66,4 +68,13 @@ Scenario: Add four vehicles
     And I should see "TOTAL COST OF OWNERSHIP CALCULATOR"
 
     When I press "Calculate >"
-    #Adn I should see "4" vehicles        
+    #Adn I should see "4" vehicles
+    And I should see "NISSAN"
+    And I should see "e-NV200 COMBI ESTATE"
+    And I should see "MERCEDES-BENZ"
+    And I should see "C CLASS AMG COUPE"
+    And I should see "NAVARA Pick-up"
+    And I click button with class "control control-right"
+    And I wait for "2" seconds
+    And I should see "HYUNDAI"
+    And I should see "ILOAD Crew Bus"
