@@ -69,7 +69,7 @@ Scenario: Add four vehicles
     And I should see "TOTAL COST OF OWNERSHIP CALCULATOR"
 
     When I press "Calculate >"
-    #Adn I should see "4" vehicles
+    And I should see "TOTAL COST OF OWNERSHIP CALCULATOR"
     And I should see "NISSAN"
     And I should see "e-NV200 COMBI ESTATE"
     And I should see "MERCEDES-BENZ"
