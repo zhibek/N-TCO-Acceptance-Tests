@@ -55,10 +55,31 @@ class FeatureContext extends MinkContext
 
         // errors must not pass silently
         if (null === $element) {
-            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $css));
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $element));
         }
 
         $element->click();
+    }
+
+    /**
+     * @When /^I should find "([^"]*)" on element "([^"]*)"$/
+     */
+    public function ishouldFindOnElement($text, $css)
+    {
+        $elements = $this->getSession()->getPage()->find('css', $css);
+        // errors must not pass silently
+        if (null === $elements) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $element));
+        }
+
+        foreach ($elements as $element) {
+            $elementText = $element->text();
+            $pos = strpos($elementText, $text);
+            if ($pos !== false) {
+                return true;
+            }
+        }
+
     }    
 
     /**
