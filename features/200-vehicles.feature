@@ -16,6 +16,7 @@ Scenario: Add four vehicles
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Add another vehicle"
+    And I wait for "2" seconds
 
     When I check "manu-other" radio button
     And I select "MERCEDES-BENZ (491)" in element "manufacturer"
@@ -31,6 +32,7 @@ Scenario: Add four vehicles
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Add another vehicle"
+    And I wait for "2" seconds
 
     When I click button with title "Commercial Vehicles"
     And I click button with title "NAVARA (8)"
@@ -43,6 +45,7 @@ Scenario: Add four vehicles
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Add another vehicle"
+    And I wait for "2" seconds
 
     When I click button with title "Commercial Vehicles"
     And I check "manu-other" radio button
