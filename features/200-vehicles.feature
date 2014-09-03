@@ -28,7 +28,7 @@ Scenario: Add four vehicles
     And I select "AMG Edition 507 (1)" in element "other-choose-grade"
     And I wait for "3" seconds
     And I click button with class "add-to-basket"
-    And I wait for "3" seconds 
+    And I wait for "3" seconds
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Add another vehicle"
@@ -39,7 +39,7 @@ Scenario: Add four vehicles
     And I wait for "3" seconds
     And I fill in the following:
     	| choose-grade | Pick-up (1) |    
-    And I wait for "3" seconds"
+    And I wait for "3" seconds
     And I click button with class "add-to-basket"
     And I wait for "3" seconds
     And I should see "YOUR VEHICLE SELECTION"
@@ -58,7 +58,7 @@ Scenario: Add four vehicles
     And I select "Crew Bus (1)" in element "other-choose-grade"
     And I wait for "3" seconds
     And I click button with class "add-to-basket"
-    And I wait for "3" seconds 
+    And I wait for "3" seconds
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Calculate tax"
