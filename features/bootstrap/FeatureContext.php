@@ -80,7 +80,45 @@ class FeatureContext extends MinkContext
             }
         }
 
-    }    
+    }
+
+    /**
+     * @When /^I find in table with id "([^"]*)" a row no "([^"]*)" in column no "([^"]*)" a text "([^"]*)"$/
+     */
+    public function iFindeInTableWithIdARowOfInColumnNoAValue($id, $recordNo, $elementNo, $text)
+    {
+        $table = "table#".$id;
+        $elements = $this->getSession()->getPage()->find('css', $table)->find('css', "tr");
+        // errors must not pass silently
+        if (null === $elements) {
+            throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $element));
+        }
+
+        $i=0;
+
+        foreach ($elements as $element) {
+            $children = $elements->find('css', "td");
+            if($children != null && $i = $recordNo){
+                    $s=0;
+                foreach ($children as $child) {
+                    if($s = $elementNo){
+                        $pos = strpos($child->text(), $text);
+                        if ($pos !== false) {
+                            return true;
+                        }        
+
+                    }
+                    $s++;
+                }
+                
+            }    
+            $i++;
+        }
+        
+
+        return false;
+
+    }      
 
     /**
      * @When /^I check "([^"]*)" radio button$/
