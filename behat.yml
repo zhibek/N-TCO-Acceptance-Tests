@@ -14,7 +14,8 @@ default:
 ci:
     extensions:
         Behat\MinkExtension\Extension:
-            base_url: http://www.nissan.co.uk/fleet-cars/
+            #base_url: http://www.nissan.co.uk/fleet-cars/
+	    base_url: http://nissan-business-hub-zhibek-develop.nissan.graymatter.co.uk/
             default_session: selenium2
             default_session: selenium2
             javascript_session: 'selenium2'

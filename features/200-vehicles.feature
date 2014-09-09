@@ -65,8 +65,8 @@ Scenario: Add four vehicles
     And I should see "YOUR VEHICLE SELECTION"
     And I should see "Your vehicle has been added"
     And I click button with title "Calculate tax"
-    Then the URL should match "/tools/tco/terms"
-    And I should see "TOTAL COST OF OWNERSHIP CALCULATOR"
+    #Then the URL should match "/tools/tco/terms"
+    Then I should see "TOTAL COST OF OWNERSHIP CALCULATOR"
 
     When I press "Calculate >"
     And I should see "TOTAL COST OF OWNERSHIP CALCULATOR"
